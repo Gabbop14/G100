@@ -1,6 +1,6 @@
 #container{
     width: 1200px;
-    background: red;
+    background-color: transparent;
     margin: 0px auto;
 }
 
@@ -11,4 +11,10 @@ header{
     color: #333;
     line-height: 65px;
     text-align: center;
+    z-index: 1;
+}
+
+#aside{
+    width: 25%;
+    float: left;
 }
