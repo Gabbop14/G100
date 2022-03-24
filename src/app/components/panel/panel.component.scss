@@ -1,9 +1,12 @@
-mat-accordion{
+.mat-accordion{
     position: sticky;
     top: 0;
     z-index: 1;
   }
 
-mat-panel-description{
-  margin-left: 20px;
+.mat-expansion-panel{
+}
+
+.mat-panel-description{
+  margin-left: 20px
 }
