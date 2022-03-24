@@ -1,0 +1,49 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.buttonSocial{
+    margin-left: auto;
+}
+
+#whatsapp:hover{
+    transform: scale(1.30,1.30);
+    -webkit-transform: scale(1.30,1.30);
+    -moz-transform: scale(1.30,1.30);
+    -ms-transform: scale(1.30,1.30);
+    -o-transform: scale(1.30,1.30);
+    cursor: pointer;
+}
+
+#facebook:hover{
+    transform: scale(1.30,1.30);
+    -webkit-transform: scale(1.30,1.30);
+    -moz-transform: scale(1.30,1.30);
+    -ms-transform: scale(1.30,1.30);
+    -o-transform: scale(1.30,1.30);
+    cursor: pointer;
+}
+
+#instagram:hover{
+    transform: scale(1.30,1.30);
+    -webkit-transform: scale(1.30,1.30);
+    -moz-transform: scale(1.30,1.30);
+    -ms-transform: scale(1.30,1.30);
+    -o-transform: scale(1.30,1.30);
+    cursor: pointer;
+}
+
+#iconMenu{
+    cursor: pointer;
+}
+
+mat-toolbar a{
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 500ms, transform 500ms;
+    color: #222;
+}
+
+mat-toolbar a:hover{
+    transform: scale(1.60,1.60);
+}
