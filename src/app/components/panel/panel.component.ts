@@ -2,33 +2,46 @@ import { Component, OnInit } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 interface DrinkNode {
   name: string;
   children?: DrinkNode[];
   icon?: string;
+  omited?: string;
 }
 
 const TREE_DATA = [
   {
     name: 'DESTACADOS',
+    icon: 'whatshot',
+    omited: 'yes',
   },
   {
     name: 'OFERTAS',
+    icon: 'regalo',
   },
   {
     name: 'Cervezas',
+    icon: 'etiqueta',
     children: [
       {
         name: 'Latas 473cc'
       },
       {
-        name: 'Botellas'
+        name: 'Botellas',
+        children: [
+          {
+            name: 'Botella 1L',
+          }
+        ]
       }
     ]
   },
   {
     name: 'Vinos',
+    icon: 'etiqueta',
     children: [
       {
         name: 'Malbec'
@@ -37,6 +50,7 @@ const TREE_DATA = [
   },
   {
     name: 'Champagne',
+    icon: 'etiqueta',
     children: [
       {
         name: 'Jasmine Monet'
@@ -48,6 +62,7 @@ const TREE_DATA = [
   },
   {
     name: 'Aperitivos',
+    icon: 'etiqueta',
     children: [
       {
         name: 'Todos'
@@ -91,8 +106,33 @@ export class PanelComponent implements OnInit {
 
   categorias: any; 
 
-  constructor() {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
     this.categorias = TREE_DATA;
+
+    //* Registro de iconos
+    this.matIconRegistry
+    .addSvgIcon(
+      'etiqueta',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/tag.svg')
+    )
+
+    .addSvgIcon(
+      'regalo',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/gift.svg')
+    )
+
+    .addSvgIcon(
+      'instagram',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/instagram.svg')
+    )
+
+    .addSvgIcon(
+      'facebook',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/facebook.svg')
+    )
    }
 
    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;

@@ -1,12 +1,47 @@
-.mat-accordion{
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-.mat-expansion-panel{
+.mat-accordion {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #212121;
 }
 
-.mat-panel-description{
-  margin-left: 20px
+.mat-expansion-panel {
+  background-color: #212121;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+.mat-expansion-panel:hover {
+  background-color: #757575;
+}
+
+.mat-expansion-panel-header {
+  background-color: #212121;
+  color: #fafafa;
+}
+
+.mat-expansion-panel-header-title {
+  color: #fafafa;
+}
+
+.mat-expansion-panel-header:hover {
+  cursor: pointer;
+  background-color: #757575;
+}
+
+p {
+  margin-left: 20px;
+  color: #fafafa;
+}
+
+:host {
+  ::ng-deep {
+    .mat-expansion-panel-spacing {
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  }
 }

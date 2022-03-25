@@ -1,17 +1,22 @@
-<mat-accordion color="primary">
+<mat-accordion multi="true" color="primary">
   <mat-expansion-panel
     [disabled]="!categoria.children"
     *ngFor="let categoria of categorias"
   >
     <mat-expansion-panel-header [collapsedHeight]="'60px'" [expandedHeight]="'28px'">
+     
       <mat-panel-title>
-        {{ categoria.name }}
+       <mat-icon *ngIf="categoria.omited">{{ categoria.icon}}</mat-icon>
+       <mat-icon svgIcon="{{ categoria.icon}}" *ngIf="!categoria.omited"></mat-icon>
+       <mat-icon></mat-icon>
+       {{categoria.name}}
       </mat-panel-title>
+      
     </mat-expansion-panel-header>
     <ng-container *ngIf="categoria.children">
       <p *ngFor="let children of categoria.children">
+        <mat-icon>subdirectory_arrow_right</mat-icon>
         {{ children.name }}
-        <mat-icon>date_range</mat-icon>
       </p>
      
       <!-- <mat-panel-description *ngFor="let children of categoria.children">

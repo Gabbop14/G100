@@ -1,34 +1,40 @@
 <mat-toolbar color="primary">
   <button
     mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
+    color="accent"
+    aria-label="iconMenu"
   >
     <mat-icon id="iconMenu">menu</mat-icon>
   </button>
   <span class="example-spacer"></span>
-  <a href="#" id="iconoHome">Demo Vineria</a>
+  <a href="#" id="iconoHome">
+   <img id="logoImg" src="https://gaboapp.com/1.0/clientes/demo-vineria/img/logo_01.png"/>
+   <h1>Demo Vinería</h1> 
+  </a>
   <span class="example-spacer"></span>
 
   <span class="buttonSocial">
-    <button
-      mat-icon-button
-      id="facebook"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon>favorite</mat-icon>
-    </button>
-
-    <button mat-icon-button id="whatsapp">
+  
+    <button mat-mini-fab id="whatsapp">
       <span class="material-icons"> whatsapp </span>
     </button>
 
     <button
-      mat-icon-button
+      mat-mini-fab
       id="instagram"
       aria-label="Example icon-button with heart icon"
     >
-      <mat-icon>favorite</mat-icon>
+      <mat-icon svgIcon="instagram"></mat-icon>
+    </button>
+
+    <button
+      mat-mini-fab
+      color="accent"
+      id="facebook"
+      aria-label="Example icon-button with heart icon"
+    >
+
+      <mat-icon svgIcon="facebook"></mat-icon>
     </button>
   </span>
 </mat-toolbar>
