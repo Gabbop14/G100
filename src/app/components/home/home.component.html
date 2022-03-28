@@ -1,12 +1,12 @@
 <div id="container">
 
   <header>
-    <app-toolbar></app-toolbar>
+    <app-toolbar (buttonMenu)="setToggle()"></app-toolbar>
   </header>
 
   <mat-sidenav-container class="example-container" autosize>
     
-    <mat-sidenav opened #Sidenav class="example-sidenav" mode="side">
+    <mat-sidenav opened #Sidenav class="example-sidenav" [mode]="(media | async) == 'sm' ? 'over' : 'side'">
 
       <section id="contentAside">
         <app-panel id="aside"></app-panel>

@@ -36,4 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.generalSubscriptions.unsubscribe();
   }
 
+  setToggle(){
+    this.sidenav?.toggle();
+  }
 }

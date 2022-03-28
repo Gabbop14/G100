@@ -31,9 +31,10 @@ export class BreakpointService {
         const isXSmall = breakpointObserver.isMatched(Breakpoints.XSmall);
         const isMediumScreen = breakpointObserver.isMatched('(min-width: 600px) and (max-width: 959px)');
         
-        console.log(isXSmall);
+       /* console.log(isXSmall);
         console.log('000000');
-        console.log(isMediumScreen)
+        console.log(isMediumScreen) */
+        
         this.$currentMediaQuery.next(isXSmall ? Media.small : Media.mid);
   })};
 

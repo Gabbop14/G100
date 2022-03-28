@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
   <button
+    #buttonMenu
     mat-icon-button
     color="accent"
-    aria-label="iconMenu"
+    aria-label="iconMenu" (click)="closeSidenav()"
   >
     <mat-icon id="iconMenu">menu</mat-icon>
   </button>
