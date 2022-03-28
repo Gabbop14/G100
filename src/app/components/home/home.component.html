@@ -1,18 +1,21 @@
 <div id="container">
-  <header>
+  <div>
     <app-toolbar></app-toolbar>
-  </header>
+    <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <section id="content">
+          <app-panel id="aside"></app-panel>
+        </section>
+      </mat-drawer>
 
-  <section id="content">
-    <app-panel id="aside"></app-panel>
-    <section id="articles">
-      <article>
-        <app-autocomplete></app-autocomplete> 
-      </article>
-      <article class="cardsContent">
-        <app-cards></app-cards>
-      </article>
-    </section>
-    <div class="clearfix"></div>
-  </section>
+      <section id="articles">
+        <article>
+          <app-autocomplete></app-autocomplete>
+        </article>
+        <article class="cardsContent">
+          <app-cards></app-cards>
+        </article>
+      </section>
+    </mat-drawer-container>
+  </div>
 </div>
