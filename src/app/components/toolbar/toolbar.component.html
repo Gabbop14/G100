@@ -8,12 +8,12 @@
   </button>
   <span class="example-spacer"></span>
   <a href="#" id="iconoHome">
-   <img id="logoImg" src="https://gaboapp.com/1.0/clientes/demo-vineria/img/logo_01.png"/>
-   <h1>Demo Vinería</h1> 
+   <img id="logoImg" src="https://gaboapp.com/1.0/clientes/demo-vineria/img/logo_01.png" [height]="45" [width]="35"/>
+   <h1 [ngStyle]="{'font-size': media == 'sm' ? '20px': '30px'}">Demo Vinería</h1> 
   </a>
   <span class="example-spacer"></span>
 
-  <span class="buttonSocial">
+  <span class="buttonSocial" *ngIf="media == 'md'">
   
     <button mat-mini-fab id="whatsapp">
       <span class="material-icons"> whatsapp </span>

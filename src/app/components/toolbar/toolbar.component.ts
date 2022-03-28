@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { BreakpointService, Media } from 'src/app/services/breakpoint.service'; 
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  generalSubscriptions = new Subscription();
+
+  media!: Media;
+
+  constructor(private breakpointService : BreakpointService) { }
 
   ngOnInit(): void {
+    this.generalSubscriptions.add(this.breakpointService.currentMediaQuery.subscribe(media => {
+     
+    this.media = media;
+  }))};
+
+  ngOnDestroy(): void {
+    this.generalSubscriptions.unsubscribe();
   }
 
 }

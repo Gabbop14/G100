@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material/material/material.module';
 import { CardsComponent } from './components/cards/cards.component';
+import { BreakpointService } from './services/breakpoint.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { CardsComponent } from './components/cards/cards.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [BreakpointService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

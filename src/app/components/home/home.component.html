@@ -1,21 +1,28 @@
 <div id="container">
-  <div>
-    <app-toolbar></app-toolbar>
-    <mat-drawer-container class="example-container" autosize>
-      <mat-drawer #drawer class="example-sidenav" mode="side">
-        <section id="content">
-          <app-panel id="aside"></app-panel>
-        </section>
-      </mat-drawer>
 
-      <section id="articles">
-        <article>
-          <app-autocomplete></app-autocomplete>
-        </article>
-        <article class="cardsContent">
-          <app-cards></app-cards>
-        </article>
+  <header>
+    <app-toolbar></app-toolbar>
+  </header>
+
+  <mat-sidenav-container class="example-container" autosize>
+    
+    <mat-sidenav opened #Sidenav class="example-sidenav" mode="side">
+
+      <section id="contentAside">
+        <app-panel id="aside"></app-panel>
       </section>
-    </mat-drawer-container>
-  </div>
+    </mat-sidenav>
+  
+    <section id="articles">
+      <article>
+        <app-autocomplete></app-autocomplete>
+      </article>
+      <article class="cardsContent">
+        <app-cards></app-cards>
+      </article>
+    </section>
+  </mat-sidenav-container>
+  
+
 </div>
+

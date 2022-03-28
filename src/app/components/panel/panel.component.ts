@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { BreakpointService, Media } from 'src/app/services/breakpoint.service';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -84,6 +86,11 @@ interface ExampleFlatNode {
   styleUrls: ['./panel.component.scss']
 })
 export class PanelComponent implements OnInit {
+
+  generalSubscriptions = new Subscription();
+
+    media: Observable<Media>; 
+
   private _transformer = (node: DrinkNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -108,8 +115,12 @@ export class PanelComponent implements OnInit {
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+
+    private breakpointService: BreakpointService
   ) {
+    this.media = this.breakpointService.currentMediaQuery;
+
     this.categorias = TREE_DATA;
 
     //* Registro de iconos
